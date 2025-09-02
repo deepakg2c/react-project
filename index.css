@@ -1,4 +1,5 @@
 .header {
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     border: solid 1px;
@@ -46,4 +47,82 @@
     border-radius: 12px;
     cursor: pointer;
     border: 1px solid black;
+}
+
+.Filter {
+    margin-bottom: 10;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.Filter:hover {
+    background-color: #0056b3;
+}
+
+.shimmer-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card1 {
+    height: 200px;
+    width: 400px;
+    margin: 20px;
+    background-color: #f0f0f0;
+
+}
+
+.login-btn {
+    padding: 0 24px;
+    /* left-right padding */
+    height: 45px;
+    /* fixed height for consistency */
+    background: #4CAF50;
+    /* nice green color */
+    color: white;
+    /* text color */
+    font-size: 16px;
+    /* readable text */
+    font-weight: 600;
+    /* bold text */
+    border: none;
+    /* remove default border */
+    border-radius: 8px;
+    /* rounded corners */
+    cursor: pointer;
+    /* pointer on hover */
+    transition: all 0.3s ease;
+    /* smooth hover effect */
+}
+
+.login-btn:hover {
+    cursor: pointer;
+    background: #45a049;
+    /* darker shade on hover */
+    transform: translateY(-2px);
+    /* small lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* subtle shadow */
+}
+
+.login-btn:active {
+    transform: translateY(0);
+    /* reset when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-con {
+    padding: 10px;
+    display: flex;
+}
+
+.search {
+    padding: 0 10px;
+}
+.search-btn{
+    
 }

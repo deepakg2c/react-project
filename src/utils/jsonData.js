@@ -1,26 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import React, { useState } from "react";
 
-const RestoCard = ({ name, address, price, rating, image }) => {
-    const [imgError, setImgError] = useState(false);
-    if (imgError) return null;
-    return (
-        <div className="resto-card">
-            <img
-                className="resto-image"
-                src={image}
-                alt={name}
-                onError={() => setImgError(true)} // if image fails, hide card
-            />
-            <h2>{name}</h2>
-            <h4>{address}</h4>
-            <h4>{price}</h4>
-            <h4>{rating}</h4>
-
-        </div>
-    )
-}
 const restoData = [
     {
         id: 1,
@@ -113,59 +91,4 @@ const restoData = [
     },
 ];
 
-const Body = () => {
-
-    return (
-        <div className="body">
-            <div className="search"></div>
-            <div className="res-container">
-                {restoData.filter((abc) => abc.image).map((abc) => (
-                    <RestoCard
-                        key={abc.id}
-                        name={abc.name}
-                        location={abc.location}
-                        price={abc.price}
-                        rating={abc.rating}
-                        image={abc.image}
-                    />
-                ))}
-
-            </div>
-        </div>
-
-    )
-}
-
-const AppLayout = () => {
-    return (
-        <div className="app">
-            <Header />
-            <Body />
-        </div>
-    )
-}
-
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://img.freepik.com/premium-vector/food-ordering-app-logo-with-points-fork-shapes-center_666184-195.jpg"></img>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home </li>
-                    <li>About </li>
-                    <li>Contact Us </li>
-                    <li>Cart </li>
-                </ul>
-            </div>
-
-        </div>
-    )
-}
-
-
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<AppLayout />)
+export default restoData;
