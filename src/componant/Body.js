@@ -1,8 +1,13 @@
 import RestoCard from "./RestoCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const Body = () => {
+    const { resId } = useParams();
+    console.log("resId", resId);
     const [allRestoData, setAllRestoData] = useState([]);  // store all data
     const [filteredRestoData, setFilteredRestoData] = useState([]); // store filtered data
     const [searchText, setSearchText] = useState("");      // store input value
@@ -83,14 +88,9 @@ const Body = () => {
                 {filteredRestoData.length > 0 ? (
                     filteredRestoData.map((restaurant, index) =>
                         restaurant?.info ? (
-                            <RestoCard
-                                key={restaurant.info.id || index}
-                                name={restaurant.info.name}
-                                address={restaurant.info.locality}
-                                price={restaurant.info.costForTwo}
-                                rating={restaurant.info.avgRating}
-                                image={IMG_CDN_URL + restaurant.info.cloudinaryImageId}
-                            />
+                            <Link key={restaurant.info.id} to={`/menu/${restaurant.info.id}`}>
+                                <RestoCard allRestoData={restaurant} />
+                            </Link>
                         ) : null
                     )
                 ) : (
